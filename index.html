@@ -3,13 +3,44 @@
 <head> 
 <title>My New Tab</title> 
 <link rel="stylesheet" href="style.css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
 </head> 
 <body> 
 <div class="window">
 <img class="logo" src="logo.png"> </img>
 <div id="custom-bar"> 
-<input type="text" id="search" placeholder="Wyszukaj w Google"> 
+<input type="text" id="search" placeholder="Wyszukaj w Google"><button id="search-btn"><span class="material-symbols-outlined">
+search
+</span></button> </input>
 <script> document.getElementById('search').addEventListener('keydown', e => { if (e.key === 'Enter') { window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(e.target.value); } }); </script>
+<script>
+  const input = document.getElementById('search');
+  const btn = document.getElementById('search-btn');
+
+  function toggleButton() {
+    if (input.value.trim().length > 0) {
+      btn.style.display = 'inline-block';
+    } else {
+      btn.style.display = 'none';
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(toggleButton, 100);
+  });
+
+  window.addEventListener('pageshow', toggleButton);
+
+  input.addEventListener('input', toggleButton);
+
+  btn.addEventListener('click', () => {
+    const query = input.value.trim();
+    if (query) {
+      window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+    }
+  });
+
+</script>
 <img class="dancing" src="dancing.gif"></img>
 </div> 
 </div>
