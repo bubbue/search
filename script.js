@@ -2,6 +2,7 @@ const sInput = document.getElementById("search");
 let textC = "";
 const button = document.getElementById("clicksearch");
 const goBack = document.getElementById("githubSite");
+const usesB = document.getElementById("uses")
 
 sInput.addEventListener("keydown", function(event){
     textC = event.target.value;
@@ -18,5 +19,9 @@ button.addEventListener("click", function(event){
 });
 
 goBack.addEventListener("click", function(event){
-    window.location.href = "file:///home/dafto/Downloads/My%20site/index.html"
+    window.location.href = "https://dreamnuker-code.github.io/"
 });
+
+usesB.addEventListener("click", function(){
+    window.location.href = "https://docs.waifu.im/"
+})
