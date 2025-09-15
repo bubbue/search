@@ -34,6 +34,6 @@ async function fetchImg() {
 
 fetchImg()
 
-imgButton.addEventListened("click", function() {
+imgButton.addEventListener("click", function() {
     window.location.href = redirect;
 })
